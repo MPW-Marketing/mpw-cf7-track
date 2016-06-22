@@ -7,9 +7,10 @@ Author: dmm
 Text Domain: mpw-cf7
 */
 function mpw_cf7_scripts_method() {
-    wp_enqueue_script( 'jscookie', plugins_url( '/js/js.cookie.js' , __FILE__ ), array( 'jquery' ), '2.1', false );
+    wp_register_script( 'jscookie', plugins_url( '/js/js.cookie.js' , __FILE__ ), array( 'jquery' ), '2.1', false );
+    wp_enqueue_script( 'jscookie')
 }
-add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
 function cf7_tracking () {
 $cont = '<span class="cookiediv"></span><script>jQuery( document ).ready( function () {
 var utmzCookie = Cookies.get("__utmz");
