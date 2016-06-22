@@ -13,7 +13,7 @@ function mpw_cf7_scripts_method() {
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 function cf7_tracking () {
 $cont = '<span class="cookiediv"></span><script>jQuery( document ).ready( function () {
-var utmzCookie = Cookies.get('__utmz');
+var utmzCookie = Cookies.get("__utmz");
 jQuery(".cookiediv").html(utmzCookie);
 });</script>';
 return $cont;
