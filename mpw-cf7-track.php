@@ -2,7 +2,7 @@
 /*
 Plugin Name: MPW CF7 Tracking
 Description: Add Tracking Data to CF7
-Version: 0.1
+Version: 0.1a
 Author: dmm
 Text Domain: mpw-cf7
 */
@@ -15,6 +15,9 @@ function cf7_tracking () {
 $cont = '<script>
 function getUtmz () {
 	var utmzCookie = Cookies.get("__utmz");
+	if ( undefined == utmzCookie ) {
+		return;
+	}
 	var valStart = /utmcsr/gi;
 	var slicedUtmzCookie = utmzCookie.slice(utmzCookie.search(valStart));
 	var splitUTMZCookie = slicedUtmzCookie.split("|");
@@ -22,6 +25,7 @@ function getUtmz () {
 }
 jQuery( document ).ready( function () {
  var utz = getUtmz ();
+ if (utz != undefined ) {
  var utzInfo = [];
  utzInfo.push(utz[0].split("="));
  utzInfo.push(utz[1].split("="));
@@ -31,6 +35,7 @@ jQuery(".utmsource").val(utzInfo[0][1]);
 jQuery(".utmcamp").val(utzInfo[1][1]);
 jQuery(".utmmediun").val(utzInfo[2][1]);
 jQuery(".utmterm").val(utzInfo[3][1]);
+}
 });</script>';
 return $cont;
 }
