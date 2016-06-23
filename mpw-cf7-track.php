@@ -36,6 +36,10 @@ jQuery(".utmcamp").val(utzInfo[1][1]);
 jQuery(".utmmediun").val(utzInfo[2][1]);
 jQuery(".utmterm").val(utzInfo[3][1]);
 }
+var httpRef = document.referrer;
+var currentPage = window.location.href;
+jQuery(".httpReferrer").val(httpRef);
+jQuery(".currentPage").val(currentPage);
 });</script>';
 return $cont;
 }
