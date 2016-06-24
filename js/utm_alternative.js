@@ -4,7 +4,7 @@
     var traffic_source_date_SEPARATOR = "|>";
     var NONE = "(none)";
 
-    domain = domain || window.location.hostname;
+    domain =  window.location.hostname;
 
     function getCookie(cookieName){
         var name = cookieName + "=";
@@ -77,7 +77,7 @@
     function setCookie(cookie, value){
         var expires = new Date();
         expires.setTime(expires.getTime() + 62208000000); //1000*60*60*24*30*24 (2 years)
-        document.cookie = cookie + "=" + value + "; expires=" + expires.toGMTString() + "; domain=" + domain + "; path=/";
+        document.cookie = cookie + "=" + value + "; expires=" + expires.toGMTString() + "; path=/";
     }
 	
 	/*
@@ -158,4 +158,4 @@
         }
     }
 
- })("traffic_source", "staging1.grcmechanical.com/");
+ })("traffic_source", "domain.com/");
