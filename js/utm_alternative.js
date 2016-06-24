@@ -158,4 +158,4 @@
         }
     }
 
- })("traffic_source", ".staging1.grcmechanical.com/");
+ })("traffic_source", "staging1.grcmechanical.com/");
