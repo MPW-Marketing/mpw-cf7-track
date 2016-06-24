@@ -11,44 +11,13 @@ function mpw_cf7_scripts_method() {
     wp_enqueue_script( 'jscookie');
     wp_register_script( 'utm_alternative', plugins_url( '/js/utm_alternative.js' , __FILE__ ), array( 'jquery' ), '1.1', false );
     wp_enqueue_script( 'utm_alternative');
+    wp_register_script( 'cf7-track', plugins_url( '/js/cf7-track.js' , __FILE__ ), array( 'jquery' ), '0.1', false );
+    wp_enqueue_script( 'cf7-track');
 }
 add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
 function cf7_tracking () {
 $cont = '<script>
-function getUtmz () {
-	var utmzCookie = Cookies.get("__utmz");
-	if ( undefined == utmzCookie ) {
-		return;
-	}
-	var valStart = /utmcsr/gi;
-	var slicedUtmzCookie = utmzCookie.slice(utmzCookie.search(valStart));
-	var splitUTMZCookie = slicedUtmzCookie.split("|");
-	return splitUTMZCookie;
-}
-function getTrafSource () {
-  var trafficCookie = Cookies.get("__traffic_source");
-	if ( undefined == trafficCookie ) {
-		return;
-	}
-	return trafficCookie;
-}
-function checkUTMTags () {
-  var thisUrl = window.location.href;
-  var valStart = /utm_source/gi;
-  if ( thisUrl.search(valStart) === -1 ) {
-    return;
-  }
-	var slicedUtm = thisUrl.slice(thisUrl.search(valStart));
-  	if ( undefined == Cookies.get("__utmz") ){
-  Cookies.set("__utmz", slicedUTM, { expires: 365, path: '/' });
-} else {
-  Cookies.set("__utmzz", slicedUTM, { expires: 365, path: '/' });
-}
-  var splitUTM = slicedUtm.split("&");
- return splitUTM;
-}
 jQuery( document ).ready( function () {
-  var chkutm = checkUTMTags ();
  var utz = getUtmz ();
  if (utz != undefined ) {
  var utzInfo = [];
