@@ -6,9 +6,9 @@ function checkUTMTags () {
   }
 	var slicedUtm = thisUrl.slice(thisUrl.search(valStart));
   	if ( undefined == Cookies.get("__utmz") ){
-  Cookies.set("__utmz", slicedUTM, { expires: 365, path: '/' });
+  Cookies.set("__utmz", slicedUtm, { expires: 365, path: '/' });
 } else {
-  Cookies.set("__utmzz", slicedUTM, { expires: 365, path: '/' });
+  Cookies.set("__utmzz", slicedUtm, { expires: 365, path: '/' });
 }
   var splitUTM = slicedUtm.split("&");
  return splitUTM;
