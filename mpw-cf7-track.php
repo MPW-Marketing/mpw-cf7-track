@@ -9,6 +9,8 @@ Text Domain: mpw-cf7
 function mpw_cf7_scripts_method() {
     wp_register_script( 'jscookie', plugins_url( '/js/js.cookie.js' , __FILE__ ), array( 'jquery' ), '2.1', false );
     wp_enqueue_script( 'jscookie');
+    wp_register_script( 'utm_alternative', plugins_url( '/js/utm_alternative.js' , __FILE__ ), array( 'jquery' ), '1.1', false );
+    wp_enqueue_script( 'utm_alternative');
 }
 add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
 function cf7_tracking () {
