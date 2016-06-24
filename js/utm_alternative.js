@@ -19,7 +19,7 @@
     }
 
 /*
-*  Takes the current time of the session, and optional addition to the traffic source. 
+*  Takes the current time of the session, and optional addition to the traffic source.
 *  The output will be of the format: >>{traffic source}|>DD-MM-YY HH:MM AM/PM>>
 *
 */
@@ -43,10 +43,10 @@
 */
 
 	/*
-       Checks whether a certain parameter exist in the current browser URL. If it does, it returns its name. 
+       Checks whether a certain parameter exist in the current browser URL. If it does, it returns its name.
 	   It will receive "src" later in the main function
     */
-	
+
     function getURLParameter(param){
         var pageURL = window.location.search.substring(1); //get the query string parameters without the "?"
         var URLVariables = pageURL.split('&'); //break the parameters and values attached together to an array
@@ -62,32 +62,32 @@
 	/*
        Gets the first (latest) token from a cookie: THIS__ONE>>NOT__THIS__ONE>>AND__NOT__THIS__ONE
     */
-	
+
     function getFirstTokenFromCookie(cookie){
         var result = "";
         var firstSeparatorIndex = cookie.indexOf(traffic_source_COOKIE_TOKEN_SEPARATOR);
-        result = firstSeparatorIndex !== -1 ? cookie.substring(0, firstSeparatorIndex) : cookie; //if there is a separator, provide the newest value no the cookie  
+        result = firstSeparatorIndex !== -1 ? cookie.substring(0, firstSeparatorIndex) : cookie; //if there is a separator, provide the newest value no the cookie
         return result;
     }
 
 	/*
        Set the cookie if it doesn't exist.
     */
-	
+
     function setCookie(cookie, value){
         var expires = new Date();
         expires.setTime(expires.getTime() + 62208000000); //1000*60*60*24*30*24 (2 years)
         document.cookie = cookie + "=" + value + "; expires=" + expires.toGMTString() + "; path=/";
     }
-	
+
 	/*
        Boolean, whether or not it's not NULL or Empty
     */
-	
+
     function isNotNullOrEmpty(string){
         return string !== null && string !== "";
     }
-	
+
 	/*
        Remove the protocol for the referral token
     */
@@ -110,10 +110,10 @@
         if(utmzCookie != null) {
             var UTMSRC = "utmccn=";
             var start = utmzCookie.indexOf(UTMSRC);
-            var end = utmzCookie.indexOf("|", start); 
+            var end = utmzCookie.indexOf("|", start);
             if(start > -1) {
                 if(end === -1) {
-                    end = utmzCookie.length; 
+                    end = utmzCookie.length;
                 }
                 cookieCampaignName = "utmz:" + utmzCookie.substring((start + UTMSRC.length), end); //get the value of the UTMZ, without the parameter name
             }
@@ -128,9 +128,9 @@
             // traffic_source = decodeURI(urlParamSRC) + currTime(); //  Optional: add the session time
         } else if(document.referrer != ""){ //if there is not campaign, and no src, check if there is a referrer,
             var referrerHostName = removeProtocol(document.referrer);
-            var GOOGLE = /www.google/; 
-            var YAHOO = /search.yahoo/; 
-            var BING = /www.bing/; 
+            var GOOGLE = /www.google/;
+            var YAHOO = /search.yahoo/;
+            var BING = /www.bing/;
             if(GOOGLE.test(referrerHostName)){
                 traffic_source = "Google Search";
                 //traffic_source = "Google Search" + currTime(); // + Optional: Add the current session time. Choose one of them.
@@ -148,7 +148,7 @@
             traffic_source = NONE;
         }
         setCookie(cookieName, traffic_source); //set the cookie
-		
+
     } else if(isNotNullOrEmpty(urlParamSRC)){ //if there is a cookie, add the SRC to the cookie, unless the same src already exists as the first token.
         var firstToken = getFirstTokenFromCookie(getCookie(cookieName));
         if(firstToken !== "" && urlParamSRC !== firstToken) {
@@ -158,4 +158,4 @@
         }
     }
 
- })("traffic_source", "domain.com/");
+ })("__traffic_source", "domain.com/");
