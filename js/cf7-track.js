@@ -123,7 +123,7 @@ function objType (obj) {
     var cookieString = "";
     var chkutm = checkUTMTags (); //see if get parameters set in url
     var chkutz = getUtmz (); //see if utmz cookie is set
-    var chkutmsource = getUtmSrc (); //check if utm source cookie set
+    var chkutmsource = parseSourceCookie (); //check if utm source cookie set
     if (chkutm) { //if url parameters use them regardless of cookie
       splitChkUtm = splitAnd(chkutm);
     } else if (chkutmsource) { //otherwise if the cookie is already set leave it
@@ -143,8 +143,11 @@ function objType (obj) {
     var utmObj = arrToObj(deepSplitUtm);
     readSourceObject(utmObj);
     return true;
+  } else {
+    return false;
+  }
   }
 jQuery( document ).ready( function () {
 setCookieIfNeeded ();
-readSourceCookie ();
+//readSourceCookie ();
   });
