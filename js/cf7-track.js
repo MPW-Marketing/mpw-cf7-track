@@ -149,5 +149,5 @@ function objType (obj) {
   }
 jQuery( document ).ready( function () {
 setCookieIfNeeded ();
-//readSourceCookie ();
+readSourceCookie ();
   });
