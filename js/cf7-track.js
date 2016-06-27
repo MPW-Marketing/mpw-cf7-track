@@ -20,7 +20,7 @@ function getUtmz () {
 	return slicedUtmzCookie;
 }
 /* get the utmSourceCookie set value to array */
-function getUtmSrc () {
+/*function getUtmSrc () {
   var utmzCookie = Cookies.get("__utmsrc");
   if ( undefined == utmzCookie ) {
     return false;
@@ -29,8 +29,7 @@ function getUtmSrc () {
   var slicedUtmzCookie = utmzCookie.slice(utmzCookie.search(valStart));
   var splitUTMZCookie = slicedUtmzCookie.split("|");
   return splitUTMZCookie;
-}
-}
+} */
 /* get teh traffic source cookie as a fallback*/
 function getTrafSource () {
   var trafficCookie = Cookies.get("__traffic_source");
