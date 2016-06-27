@@ -18,18 +18,6 @@ add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
 function cf7_tracking () {
 $cont = '<script>
 jQuery( document ).ready( function () {
- var utz = getUtmz ();
- if (utz != undefined ) {
- var utzInfo = [];
- utzInfo.push(utz[0].split("="));
- utzInfo.push(utz[1].split("="));
-  utzInfo.push(utz[2].split("="));
-  utzInfo.push(utz[3].split("="));
-jQuery(".utmsource").val(utzInfo[0][1]);
-jQuery(".utmcamp").val(utzInfo[1][1]);
-jQuery(".utmmediun").val(utzInfo[2][1]);
-jQuery(".utmterm").val(utzInfo[3][1]);
-}
 var httpRef = document.referrer;
 var currentPage = window.location.href;
 jQuery(".httpReferrer").val(httpRef);
