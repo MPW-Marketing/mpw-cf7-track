@@ -78,7 +78,7 @@ function arrToObj (arr) {
 }
 return obj;
 }
-funciton readSourceObject (obj) {
+function readSourceObject (obj) {
   jQuery(".utmsource").val(obj.source);
   jQuery(".utmcamp").val(obj.campaign);
   jQuery(".utmmediun").val(obj.medium);
