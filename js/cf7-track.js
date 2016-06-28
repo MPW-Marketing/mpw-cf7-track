@@ -7,6 +7,7 @@ function readSourceObject () {
   jQuery(".firstutmcamp").val(sbjs.get.first.cmp);
   jQuery(".firstutmmediun").val(sbjs.get.first.mdm);
   jQuery(".firstutmterm").val(sbjs.get.first.trm);
+}
 
 jQuery( document ).ready( function () {
 sbjs.init();
