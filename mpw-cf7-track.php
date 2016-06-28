@@ -11,7 +11,9 @@ function mpw_cf7_scripts_method() {
     wp_enqueue_script( 'jscookie');
     wp_register_script( 'utm_alternative', plugins_url( '/js/utm_alternative.js' , __FILE__ ), array( 'jquery' ), '1.1', false );
     wp_enqueue_script( 'utm_alternative');
-    wp_register_script( 'cf7-track', plugins_url( '/js/cf7-track.js' , __FILE__ ), array( 'jquery' ), '0.1', false );
+    wp_register_script( 'sourcebuster', plugins_url( '/js/sourcebuster.min.js' , __FILE__ ), array( 'jquery' ), '0.1', false );
+    wp_enqueue_script( 'sourcebuster');
+    wp_register_script( 'cf7-track', plugins_url( '/js/cf7-track.js' , __FILE__ ), array( 'jquery', 'sourcebuster' ), '0.1', false );
     wp_enqueue_script( 'cf7-track');
 }
 add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
