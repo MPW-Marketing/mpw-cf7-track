@@ -16,6 +16,7 @@ add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
 function cf7_tracking () {
 $cont = '<script>
 jQuery( document ).ready( function () {
+readSourceObject();
 var httpRef = document.referrer;
 var currentPage = window.location.href;
 jQuery(".httpReferrer").val(httpRef);
