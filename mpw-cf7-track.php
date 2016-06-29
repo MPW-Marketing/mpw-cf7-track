@@ -2,7 +2,7 @@
 /*
 Plugin Name: MPW CF7 Tracking
 Description: Add Tracking Data to CF7
-Version: 0.1a
+Version: 0.2
 Author: dmm
 Text Domain: mpw-cf7
 */
