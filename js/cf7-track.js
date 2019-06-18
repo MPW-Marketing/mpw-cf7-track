@@ -47,6 +47,10 @@ r(function(){
       var gclid_input = document.getElementById("gclid");
       gclid_input.value = gclidGetCookie('gclid_hold');
   }
+  if(gclidGetCookie('gclid_hold') && document.getElementById("glcid")){
+    var gclid_input = document.getElementById("glcid");
+    gclid_input.value = gclidGetCookie('gclid_hold');
+}
 })
 
 jQuery(document).ready(function() {
