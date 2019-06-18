@@ -4,6 +4,7 @@ Plugin Name: MPW CF7 Tracking
 Description: Add Tracking Data to CF7
 Version: 0.3
 Author: dmm
+GitHub Plugin URI: https://github.com/MPW-Marketing/mpw-cf7-track
 Text Domain: mpw-cf7
 */
 function mpw_cf7_scripts_method() {
