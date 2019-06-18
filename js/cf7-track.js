@@ -55,6 +55,6 @@ r(function(){
 
 jQuery(document).ready(function() {
   sbjs.init({
-      campaign_param: 'adc',
+      campaign_param: 'ads',
   });
 });
