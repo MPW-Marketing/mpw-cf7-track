@@ -51,6 +51,9 @@ r(function(){
     var gclid_input = document.getElementById("glcid");
     gclid_input.value = gclidGetCookie('gclid_hold');
 }
+if(gclidGetCookie('gclid_hold')) {
+  jQuery(".landingGclid").val(gclidGetCookie('gclid_hold'));
+}
 })
 
 jQuery(document).ready(function() {
