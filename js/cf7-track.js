@@ -55,6 +55,6 @@ r(function(){
 
 jQuery(document).ready(function() {
   sbjs.init({
-      campaign_param: 'ads',
+      campaign_param: 'google-ads',
   });
 });
