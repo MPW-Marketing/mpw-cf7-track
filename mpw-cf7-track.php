@@ -2,7 +2,7 @@
 /*
 Plugin Name: MPW CF7 Tracking
 Description: Add Tracking Data to CF7
-Version: 0.3.5
+Version: 0.3.4
 Author: dmm
 GitHub Plugin URI: https://github.com/MPW-Marketing/mpw-cf7-track
 Text Domain: mpw-cf7
@@ -18,7 +18,6 @@ add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
 function cf7_tracking () {
 
 wp_enqueue_script( 'cf7-writesources');
-return do_shortcode( '[dynamichidden gclid id:gclid class:landingGclid]' );
 }
 add_shortcode('cf7_track', 'cf7_tracking');
 
