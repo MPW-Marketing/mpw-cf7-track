@@ -18,6 +18,7 @@ add_action( 'wp_enqueue_scripts', 'mpw_cf7_scripts_method' );
 function cf7_tracking () {
 
 wp_enqueue_script( 'cf7-writesources');
+return do_shortcode( '[dynamichidden gclid id:gclid class:landingGclid]' );
 }
 add_shortcode('cf7_track', 'cf7_tracking');
 
